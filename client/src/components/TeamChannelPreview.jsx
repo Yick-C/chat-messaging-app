@@ -4,19 +4,21 @@ import { Avatar, useChatContext } from 'stream-chat-react';
 const TeamChannelPreview = ({ setActiveChannel, setIsCreating, setIsEditing, setToggleContainer, channel, type }) => {
     const { channel: activeChannel, client } = useChatContext();
 
+    // Preview of channels
     const ChannelPreview = () => (
         <p className='channel-preview__item'>
             # {channel?.data?.name || channel?.data?.id}
         </p>
     )
 
+    // Preview of direct messages
     const DirectPreview = () => {
         const members = Object.values(channel.state.members).filter(({ user }) => user.id !== client.userID); // Get users that are not us
 
         return (
             <div className='channel-preview__item single'>
-                <Avatar image={members[0]?.user?.image} name={members[0]?.user?.fullname} size={24} />
-                <p>{members[0]?.user?.fullname}</p>
+                <Avatar image={members[0]?.user?.image} name={members[0]?.user?.fullName || members[0]?.user?.id} size={24} />
+                <p>{members[0]?.user?.fullName || members[0]?.user?.id}</p>
             </div>
         )
     }

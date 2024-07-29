@@ -7,8 +7,7 @@ require('dotenv').config();
 
 const api_key = process.env.STREAM_API_KEY;
 const api_secret = process.env.STREAM_API_SECRET;
-const app_id = process.env.STREAM_API_ID;
-
+const app_id = process.env.STREAM_APP_ID;
 
 const signup = async (req, res) => {
     try {
@@ -17,24 +16,23 @@ const signup = async (req, res) => {
         const userId = crypto.randomBytes(16).toString('hex');
 
         const serverClient = connect(api_key, api_secret, app_id);
-        
+
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const token = serverClient.createUserToken(userId);
 
-        res.status(200).json({token, fullName, username, userId, hashedPassword, phoneNumber});
-
+        res.status(200).json({ token, fullName, username, userId, hashedPassword, phoneNumber });
     } catch (error) {
         console.log(error);
 
-        res.status(500).json({message: error});
+        res.status(500).json({ message: error });
     }
 };
 
 const login = async (req, res) => {
     try {
         const { username, password } = req.body;
-
+        
         const serverClient = connect(api_key, api_secret, app_id);
         const client = StreamChat.getInstance(api_key, api_secret);
 
@@ -46,16 +44,16 @@ const login = async (req, res) => {
 
         const token = serverClient.createUserToken(users[0].id);
 
-        if (success) {
-            res.status(200).json({token, fullName: users[0].fullname, username, userId: users[0].id});
+        if(success) {
+            res.status(200).json({ token, fullName: users[0].fullName, username, userId: users[0].id});
         } else {
-            res.status(500).json( {message: 'Incorrect password'});
+            res.status(500).json({ message: 'Incorrect password' });
         }
     } catch (error) {
         console.log(error);
 
-        res.status(500).json({message: error});
+        res.status(500).json({ message: error });
     }
 };
 
-module.exports = { signup, login };
+module.exports = { signup, login }
