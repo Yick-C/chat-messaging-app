@@ -202,6 +202,7 @@
     height: fit-content;
     margin-bottom: 8px;
     background-color: var(--primary-color);
+    color: whitesmoke;
   }
   
   .str-chat-channel {
@@ -993,7 +994,6 @@
     background: rgba(0, 0, 0, 0.2);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    font-weight: bold;
     margin-right: 16px;
     cursor: pointer;
   }
