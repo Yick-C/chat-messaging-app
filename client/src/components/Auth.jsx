@@ -131,8 +131,8 @@ const Auth = () => {
                     <div className="auth__form-container_fields-account">
                         <p>
                             {isSignup
-                             ? "Already have an account?" 
-                             : "Don't have an account?"
+                             ? "Already have an account? " 
+                             : "Don't have an account? "
                              }
                              <span onClick={switchMode}>
                              {isSignup ? 'Sign In' : 'Sign Up'}
@@ -142,7 +142,7 @@ const Auth = () => {
                 </div> 
             </div>
             <div className="auth__form-container_image">
-                <img src={'/images/signup.jpg'} alt="sign in" />
+                <img src={'/images/login_page.jpg'} alt="sign in" />
             </div>
         </div>
     )
