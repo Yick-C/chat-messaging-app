@@ -8,3 +8,8 @@ This Chat Messaging App is a web application built with React and Stream Chat, a
 - Real-Time Messaging: Using Stream Chat, the app provides real-time messaging capabilities, allowing for instant communication.
 - Emojis and Attachments: Users can enhance their conversations with emojis and share files as attachments.
 - Group Chats: Users can create and join group chats
+
+<p align="center">
+  <img src="https://github.com/Yick-C/chat-messaging-app/blob/master/chat-project.png" width="250" height="500">
+  <img src="https://github.com/Yick-C/chat-messaging-app/blob/master/chat-project-login.png" width="250" height="500">
+</p>
