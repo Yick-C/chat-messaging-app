@@ -10,6 +10,6 @@ This Chat Messaging App is a web application built with React and Stream Chat, a
 - Group Chats: Users can create and join group chats
 
 <p align="center">
-  <img src="https://github.com/Yick-C/chat-messaging-app/blob/master/chat-project.png" width="1200" height="800">
   <img src="https://github.com/Yick-C/chat-messaging-app/blob/master/chat-project-login.png" width="1200" height="800">
+  <img src="https://github.com/Yick-C/chat-messaging-app/blob/master/chat-project.png" width="1200" height="800">
 </p>
